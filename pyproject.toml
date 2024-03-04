@@ -1,0 +1,29 @@
+# pyproject.toml
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "toy_app"
+author = "Richard Morris"
+author-email = "richard.morris@anu.edu.au"
+home-page = "https://github.com/khiron/toy_app"
+requires = ["stevedore", "cogent3"]
+requires-python = ">=3.6"
+
+[tool.flit.scripts]
+toy-app = "toy_app:indent_print"
+
+[project]
+name = "toy_app"
+version = "0.1.0"
+description = "A demonstration plugin for cogent3"
+readme = "README.md"
+authors = [
+    { name = "Richard Morris", email = "richard.morris@anu.edu.au" },
+]
+license = "MIT"
+dependencies = ["stevedore", "cogent3"]
+
+[project.entry_points."cogent3plugins.database"]
+"toy_app" = "toy_app:indent_print"
